@@ -1,0 +1,41 @@
+//recuperer employe
+export async function fetchEmployees() {
+    const res = await fetch(import.meta.env.VITE_API_URL);
+    console.log(res);
+    // Vérification du statut HTTP
+    if (!res.ok) {
+        throw new Error(`Erreur HTTP ${res.status}`);
+    }
+
+    // Lecture et affichage des données JSON
+    const data = await res.json();
+    return data;
+}
+//envoyer les info nouveau employe
+export async  function postEmployee(e){
+    e.preventDefault();
+    let nameEmp = document.getElementById("nameEmp").value;
+    let nbDay = document.getElementById("nbDay").value;
+    let dayRate = document.getElementById("dayRate").value;
+    console.log(nameEmp,typeof(nbDay),typeof(dayRate));
+
+    const employe = {
+        nameEmp: nameEmp,
+        nbDay:nbDay,
+        dayRate:dayRate,
+    }
+
+    // document.getElementById("nameEmp").value = "";
+    // document.getElementById("nbDay").value = '';
+
+    let res = await fetch(import.meta.env.VITE_API_URL, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(employe)
+    });
+
+    const data = await res.json();
+    console.log("reponse du serveur",data.message);
+    document.getElementById("request-result").textContent = data.message;//message de retour apres insertion
+}
+
