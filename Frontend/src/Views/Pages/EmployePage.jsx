@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CardEmploye from "../Components/CardEmploye.jsx";
+import ModifyModal from "../Components/ModifyModal.jsx";
+import DeleteModal from "../Components/DeleteModal.jsx";
 import '../../Styles/employePage.css';
 import '../../Styles/homePage.css';
-import ModifyModal from "../Components/ModifyModal.jsx";
-
 
 export default function EmployePage() {
 
@@ -32,17 +32,24 @@ export default function EmployePage() {
         fetchEmployes();
     }
 
-    //recuperer  l employe a modifier
+    //recuperer  l employe clique
     const [selectedEmploye, setSelectedEmploye] = useState(null);
 
     //confirmer la suppression
-    const confirmDeleteEmploye = (numEmp) => {
-        confirm("Voulez vous supprimer l'employe?");
+    const [deleteModal, setDeleteModal] = useState(false);
+
+    const showDeleteModal = () => {
+        setDeleteModal(true);
+    }
+    const hideDeleteModal = () => {
+        setDeleteModal(false);
+        fetchEmployes();
     }
 
     return (
         <div className="my-container">
-            <ModifyModal  visible={modal} onClose={hideModal} employe={selectedEmploye} load={fetchEmployes}/>
+            <ModifyModal  visible={modal} onClose={hideModal} employe={selectedEmploye}/>
+            <DeleteModal visible={deleteModal} onClose={hideDeleteModal} employe={selectedEmploye}/>
             <div className="row"></div>
             <table className="my-table">
                 <thead>
@@ -66,7 +73,10 @@ export default function EmployePage() {
                             setSelectedEmploye(employe);
                             showModal();
                         }}
-                        onDeleteEmploye={()=>confirmDeleteEmploye(employe.numEmploye)}
+                        onDeleteEmploye={()=> {
+                            setSelectedEmploye(employe);
+                            showDeleteModal();
+                        }}
                     />
                 ))}
                 </tbody>

@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import '../../Styles/homePage.css';
-import {fetchEmployees, postEmployee} from "../Script/fetch.js";
+import {postEmployee} from "../Script/fetch.js";
 import useEmployeForm from "../Components/UseEmployeForm.jsx";
 
 export default function HomePage() {

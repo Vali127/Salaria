@@ -57,3 +57,17 @@ export async function updateEmploye(e,numEmp,nameEmp,nbDay,rate){
     document.getElementById("request-result").textContent = data.message;
 
 }
+
+export async function deleteEmploye(numEmp){
+    const numEmploye = {
+        numEmp: numEmp
+    }
+    let res = await fetch(import.meta.env.VITE_API_URL, {
+        method: 'DELETE',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(numEmploye)
+    })
+    let data = await res.json();
+    console.log("reponse du serveur",data.message);
+
+}

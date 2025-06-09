@@ -68,3 +68,14 @@ else if($method == 'PUT'){
         echo json_encode(["message"=>"Resultat: Erreur lors de la modification"]);
     }
 }
+else if($method=='DELETE'){
+    $numEmploye = json_decode(file_get_contents("php://input"),true);
+
+    try{
+        $vm -> deleteEmploye($numEmploye["numEmp"]);
+        echo json_encode(["message"=>"Resultat: suppression employe effectue"]);
+    }
+    catch(Exception $e){
+        echo json_encode(["message"=>"Resultat: Erreur lors de la suppression"]);
+    }
+}
