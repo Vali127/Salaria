@@ -14,7 +14,8 @@ require_once __DIR__ . '/Models/EmployeModel.php';
 require_once __DIR__ . '/ViewModels/EmployeViewModel.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-    $vm = new EmployeViewModel();
+$vm = new EmployeViewModel();
+
 // verifier si donnees non isNull
 function isEmptyOrWhiteSpace($str) {
     return !isset($str) || trim($str) === '';
@@ -55,5 +56,15 @@ else if($method == 'POST'){
         echo json_encode(["message"=>"Resultat: Veuillez entrer des donnees corrects"]);
 
     }
+}
+else if($method == 'PUT'){
+    $employeData = json_decode(file_get_contents("php://input"),true);
 
+    try{
+        $vm -> updateEmploye($employeData["numEmp"],$employeData["nameEmp"],$employeData["nbDay"],$employeData["dayRate"]);
+        echo json_encode(["message"=>"Resultat: modification employe effectue"]);
+    }
+    catch(Exception $e){
+        echo json_encode(["message"=>"Resultat: Erreur lors de la modification"]);
+    }
 }

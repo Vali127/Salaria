@@ -3,12 +3,13 @@
 class EmployeModel {
     public $numEmploye;
     public $nomEmploye;
-    public $nbjours;
+    public $nbJour;
+    public $tauxJournalier;
 
-    public function __construct($numEmploye, $nomEmploye, $nbjours,$tauxJournalier) {
+    public function __construct($numEmploye, $nomEmploye, $nbJour,$tauxJournalier) {
         $this->numEmploye = $numEmploye;
         $this->nomEmploye = $nomEmploye;
-        $this->nbjours = $nbjours;
+        $this->nbJour = $nbJour;
         $this->tauxJournalier = $tauxJournalier;
     }
 }

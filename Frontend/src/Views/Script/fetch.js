@@ -9,6 +9,7 @@ export async function fetchEmployees() {
 
     // Lecture et affichage des données JSON
     const data = await res.json();
+    console.log("donnes recu deirrect:",data);
     return data;
 }
 //envoyer les info nouveau employe
@@ -39,3 +40,20 @@ export async  function postEmployee(e){
     document.getElementById("request-result").textContent = data.message;//message de retour apres insertion
 }
 
+export async function updateEmploye(e,numEmp,nameEmp,nbDay,rate){
+    e.preventDefault();
+    const employe = {
+        numEmp: numEmp,
+        nameEmp: nameEmp,
+        nbDay:nbDay,
+        dayRate:rate
+    }
+    let res = await fetch(import.meta.env.VITE_API_URL, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(employe)
+    });
+    let data = await res.json();
+    document.getElementById("request-result").textContent = data.message;
+
+}

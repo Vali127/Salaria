@@ -31,17 +31,17 @@ class EmployeViewModel {
         return $stmt -> execute([$nomEmp,$nbJour,$tauxJournalier]);
     }
 
-    public function updateEmploye($numEmp,$nomEmp,$tauxJournalier){
-        $sql =  "UPDATE FROM EMPLOYE SET nomEmp = ?,nbJour =? WHERE numEmp =?";
-        $stmt = $this -> pdo -> prepare($sql);
+    public function updateEmploye($numEmp,$nomEmp,$nbJour,$tauxJournalier){
+        $sql =  "UPDATE EMPLOYE SET nomEmp = ?,nbJour =?,tauxJournalier=? WHERE numEmp =?";
+        $stmt = $this -> connection -> prepare($sql);
 
-        return $stmt -> execute([$nomEmp,$nbJour,$numEmp,$tauxJournalier]);
+        return $stmt -> execute([$nomEmp,$nbJour,$tauxJournalier,$numEmp]);
 
     }
 
     public function deleteEmploye($numEmp){
         $sql = "DELETE FROM EMPLOYE WHERE numEmp = ?";
-        $stmt = $this -> pdo -> prepare($sql);
+        $stmt = $this -> connection -> prepare($sql);
         return $stmt -> execute([$numEmp]);
     }
 }

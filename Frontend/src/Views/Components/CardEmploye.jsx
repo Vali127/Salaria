@@ -5,11 +5,13 @@ export default function CardEmploye({ employe, onEditEmploye, onDeleteEmploye })
         <tr>
             <td className="col-1">{employe.numEmploye}</td>
             <td className="col-2">{employe.nomEmploye}</td>
-            <td className="col-3">{employe.nbjours}</td>
+            <td className="col-3">{employe.nbJour}</td>
             <td className="col-4">{employe.tauxJournalier}</td>
+            <td className="col-4">{employe.nbJour*employe.tauxJournalier}</td>
+
 
             <td className="col-5">
-                <button onClick={() => onEditEmploye()}>Modifier</button>
+                <button onClick={() => onEditEmploye(employe.numEmploye)}>Modifier</button>
             </td>
             <td className="col-6">
                 <button onClick={() => onDeleteEmploye(employe.numEmploye)}>Supprimer</button>
