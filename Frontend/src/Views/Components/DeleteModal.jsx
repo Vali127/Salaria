@@ -14,11 +14,9 @@ export default function DeleteModal({visible,onClose,employe}) {
 
                         <div className="btn-div">
                             <button className="btn" type="reset" id="close-btn" onClick={onClose}>Annuler</button>
-                            <button className="btn" type="submit" id="confirm-btn" onClick={(e)=> {
+                            <button className="btn" type="submit" id="confirm-btn" onClick={(e)=>{
                                 e.preventDefault();
-                                deleteEmploye(employe.numEmploye);
-                                onClose();
-                            }}>Confirmer</button>
+                                deleteEmploye(employe.numEmploye);}} onDoubleClick={onClose}>Confirmer</button>
                         </div>
                     </form>
                 </div>

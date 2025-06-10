@@ -1,6 +1,5 @@
 .section-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 2rem;
     margin-top: 50px;

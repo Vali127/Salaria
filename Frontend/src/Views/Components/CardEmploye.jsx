@@ -6,8 +6,8 @@ export default function CardEmploye({ employe, onEditEmploye, onDeleteEmploye })
             <td className="col-1">{employe.numEmploye}</td>
             <td className="col-2">{employe.nomEmploye}</td>
             <td className="col-3">{employe.nbJour}</td>
-            <td className="col-4">{employe.tauxJournalier}</td>
-            <td className="col-4">{employe.nbJour*employe.tauxJournalier}</td>
+            <td className="col-4">{employe.tauxJournalier.toLocaleString('fr-FR')}</td>
+            <td className="col-4">{(employe.nbJour*employe.tauxJournalier).toLocaleString('fr-FR')}</td>
 
 
             <td className="col-5">

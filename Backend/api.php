@@ -23,7 +23,23 @@ function isEmptyOrWhiteSpace($str) {
 function isInteger($str){
     return filter_var($str,FILTER_VALIDATE_INT) !== false;
 }
-if ($method == 'GET') {
+if ($method == 'GET'&&isset($_GET["total"])) {
+    $data = $vm->getTotalSalary();
+    echo json_encode($data);
+    exit;
+}
+else if ($method == 'GET'&&isset($_GET["max"])) {
+    $data = $vm->getMaxSalary();
+    echo json_encode($data);
+    exit;
+}
+else if ($method == 'GET'&&isset($_GET["min"])) {
+    $data = $vm->getMinSalary();
+    echo json_encode($data);
+    exit;
+}
+
+else if ($method == 'GET') {
     $employes = $vm->getEmployes();
     echo json_encode($employes);
 }
@@ -35,14 +51,14 @@ else if($method == 'POST'){
     try{
          //test si vide
          if(isEmptyOrWhiteSpace($employeData['nameEmp'])||isEmptyOrWhiteSpace($employeData['nbDay'])||isEmptyOrWhiteSpace($employeData['dayRate'])){
-                echo json_encode(["message"=>"Resultat: Veuillez entrez toutes les informations"]);
-                return;
+             echo json_encode(["message"=>"Resultat: Veuillez entrez toutes les informations"]);
+             exit;
            }
 
          //test si non entier
          else if(!isInteger($employeData["nbDay"])){
             echo json_encode(["message" => "Resultat: Entrer un nombre entier pour le nombre de jours "]);
-            return;
+            exit;
          }
 
         //sinon inserer

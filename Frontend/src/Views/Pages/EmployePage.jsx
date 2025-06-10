@@ -50,7 +50,7 @@ export default function EmployePage() {
         <div className="my-container">
             <ModifyModal  visible={modal} onClose={hideModal} employe={selectedEmploye}/>
             <DeleteModal visible={deleteModal} onClose={hideDeleteModal} employe={selectedEmploye}/>
-            <div className="row"></div>
+            <h4>Listes des employes</h4>
             <table className="my-table">
                 <thead>
                 <tr>
