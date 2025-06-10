@@ -61,7 +61,7 @@ Ouvrez http://localhost:5173 dans votre navigateur.
 
 ## 🎨 Zones Ouvertes aux Contributions
 
-- Je cherche particulièrement des contributions pour :
+  Je cherche particulièrement des contributions pour :
 
 - Améliorations UI/UX
 
