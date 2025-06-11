@@ -1,4 +1,4 @@
-.env
+Frontend/.env
 #Logs
 logs
 *.log
