@@ -2,6 +2,7 @@ import React from "react";
 import {useState} from "react";
 import '../../Styles/homePage.css';
 import AddModal from "../Components/AddModal.jsx";
+import HomePanel from "../Components/HomePanel.jsx";
 
 export default function HomePage() {
     /**
@@ -17,23 +18,25 @@ export default function HomePage() {
 
 
     return (
-        <div className="section-container">
-            <AddModal visible={modal} hideModal={hideModal}/>
-            <div className="section-text">
+        <div className="home-page">
+            <div className="section-container animate__animated animate__fadeInLeft">
+                <AddModal visible={modal} hideModal={hideModal}/>
+                <div className="section-text">
                 <span>
                     <span style={{fontSize: "35px", letterSpacing: "2px"}} className="fw-bolder">
                         Visualiser les statistiques des salaires
                     </span>
                 </span>
-                <p style={{ fontSize: "13px" }}>
-                    Ce site vous offre la possibilité d'enregistrer vos salariés et
-                    avoir une idée des salaires minimaux ainsi que maximaux
-                    à travers des données statistiques.
-                </p>
-                <button onClick={showModal} className="btn-add">Nouveau employé</button>
+                    <p style={{ fontSize: "13px" }}>
+                        Ce site vous offre la possibilité d'enregistrer vos salariés et
+                        avoir une idée des salaires minimaux ainsi que maximaux
+                        à travers des données statistiques.
+                    </p>
+                    <button onClick={showModal} className="btn-add animate__animated animate__fadeInDown " style={{ animationDelay : "0.5s" }} >Nouveau employé</button>
+                </div>
             </div>
-            <div className="section-image">
-                <img  alt="put a pic here if u find one" />
+            <div className="image__panel animate__animated animate__fadeInUp  " style={{ animationDelay : "0.6s" }} >
+                <HomePanel/>
             </div>
         </div>
     );

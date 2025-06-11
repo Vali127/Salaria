@@ -5,6 +5,7 @@
     margin-top: 50px;
     gap: 2rem;
     flex-wrap: wrap;
+    margin-left: 60px;
 }
 
 .section-text {
@@ -15,6 +16,7 @@
 }
 
 .section-image {
+    background-color: #DC0C3A;
     width: 100%;
     max-width: 500px;
     flex: 1;
@@ -153,4 +155,14 @@
     font-weight: bold;
     color: #dc1414;
     word-wrap: break-word;
+}
+.home-page {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.image__panel {
+    height: 650px;
 }
