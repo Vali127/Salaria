@@ -24,8 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 
-#dependancies files
-*.json
 
 #vendor
 vendor/
