@@ -1,4 +1,5 @@
-Frontend/.env
+.env
+.idea
 #Logs
 logs
 *.log
