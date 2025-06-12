@@ -14,13 +14,22 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav gap-5 align-items-center">
                         <li className="nav-item underline">
-                            <Link className="nav-link" to="/">Accueil</Link>
+                            <Link className="nav-link   d-flex align-items-center " to="/">
+                                <span className="icon-font" >&#xE2C4;</span>
+                                <label>&nbsp;Accueil</label>
+                            </Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link className="nav-link d-flex align-items-center" to="/EmployeLists">
+                                <span className="icon-font" >&#xE2F0;</span>
+                                <label>&nbsp;Liste</label>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/EmployeLists">Liste</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/Balance">Bilan</Link>
+                            <Link className="nav-link d-flex align-items-center " to="/Balance">
+                                <span className="icon-font" >&#xE154;</span>
+                                <label>&nbsp;Bilan</label>
+                            </Link>
                         </li>
                     </ul>
                 </div>
