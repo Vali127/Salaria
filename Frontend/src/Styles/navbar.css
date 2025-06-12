@@ -6,5 +6,13 @@ color: var(--green-color);
     text-decoration-color: var(--green-color);
     text-decoration-thickness: 3px;
     text-underline-offset: 3px ;
+}
 
+@keyframes menu-indicator-animation  {
+    from {
+        width: 0;
+    }
+    to {
+        width:  100%;
+    }
 }
