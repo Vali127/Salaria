@@ -10,10 +10,7 @@ const LoginPage = ({onLogin}) => {
     const [Username , setUsername ] = useState('')
     const [UserPassword, setUserPassword ] = useState('')
 
-    const HandleUsername = (event) => setUsername(event.target.value)
-    const HandleUserPassword = (event) => setUserPassword(event.target.value)
-
-    const HideAndShow = () =>  setHidden( !Hidden )
+    const HideAndShowPassword = () =>  setHidden( !Hidden )
 
     const HandleSubmit = async (event)=> {
         event.preventDefault()
@@ -36,26 +33,36 @@ const LoginPage = ({onLogin}) => {
     return (
         <div className={"container-fluid m-5 d-flex align-items-center justify-content-center"} >
                 <div className={"login_form"} >
-                    <form method="post">
+                    <form method="post" onSubmit={HandleSubmit} >
                         <h2>Connexion</h2>
                         <p>
                             <label>Nom d 'utilisateur</label>
-                            <input onChange={HandleUsername} value={Username} required />
+                            <input
+                                onChange={(event) => setUsername(event.target.value)}
+                                value={Username}
+                            />
                         </p>
                         <p>
                             <label>Mot de passe</label>
                             <span className={"input_div"} >
-                                <input id={"passwd"} type={ Hidden ? "password" : "text" } onChange={HandleUserPassword} value={UserPassword} required />
-                                <label onClick={HideAndShow} className={"icon-font log_icon"} id={"hide_and_show"} ></label>
+                                <input
+                                    id={"passwd"} type={ Hidden ? "password" : "text" }
+                                    onChange={(event) => setUserPassword(event.target.value)}
+                                    value={UserPassword}
+                                />
+                                <label onClick={HideAndShowPassword} className={"icon-font log_icon"} id={"hide_and_show"} ></label>
                             </span>
                         </p>
                         <p><label id={"login_request_response"}></label></p>
-                        { Access && <Link className={"btn btn-success"} to="/HomePage" onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</Link>}
-
-                        { !Access && <div className={"d-flex justify-content-center  align-items-center gap-2 w-100"} >
-                                    <button className={"btn btn-primary "} onClick={HandleSubmit} >Confirmer</button>
+                        { Access ?
+                            (   <Link className={"btn btn-success"} to="/HomePage" onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</Link> ) :
+                            (
+                                <div className={"d-flex justify-content-center  align-items-center gap-2 w-100"} >
+                                    <button className={"btn btn-primary "} type={"submit"} >Confirmer</button>
                                     <button className={"btn btn-warning "} type={"reset"} >Quitter</button>
-                        </div> }
+                                </div>
+                            )
+                        }
                     </form>
                 </div>
         </div>
