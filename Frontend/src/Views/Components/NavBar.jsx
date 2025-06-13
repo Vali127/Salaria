@@ -21,7 +21,7 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav gap-5 align-items-center">
                         <li className="nav-item underline" id="home" onClick={ToggleMenuIndicator} >
-                            <Link className="nav-link   d-flex align-items-center " to="/">
+                            <Link className="nav-link   d-flex align-items-center " to="/HomePage">
                                 <span className="icon-font" >&#xE2C4;</span>
                                 <label>&nbsp;Accueil</label>
                             </Link>
