@@ -16,7 +16,6 @@ export default function HomePage() {
     const showModal = () => {setModal(true);};
     const hideModal = () => {setModal(false);};
 
-
     return (
         <>
             <div className="home-page">

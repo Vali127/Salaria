@@ -29,7 +29,11 @@ const LoginPage = ({onLogin}) => {
         setUserPassword('')
     }
 
-    const GoToHomePage = () => onLogin(Access)
+    const GoToHomePage = () => {
+        sessionStorage.setItem("isLoggedIn", "true")
+        onLogin(true)
+        window.open("/HomePage", "_blank")
+    }
 
     useEffect(() => {
         document.getElementById("hide_and_show").innerHTML = (Hidden) ? "&#xE220;" : "&#xE224;" //ça marche pas avec un textContent
@@ -70,7 +74,9 @@ const LoginPage = ({onLogin}) => {
                         <p className={"login_paragraph"} ><label id={"login_request_response"}></label></p>
 
                         { Access ?
-                            (   <Link className={"btn btn-success"} to="/HomePage" onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</Link> ) :
+                            (
+                                <button className={"btn btn-success"} onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</button>
+                            ) :
                             (
                                 <div className={"d-flex justify-content-center  align-items-center gap-2 w-100"} >
                                     <button className={"btn btn-primary "} type={"submit"} >Confirmer</button>
