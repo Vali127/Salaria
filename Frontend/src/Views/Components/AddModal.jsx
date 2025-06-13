@@ -34,9 +34,9 @@ export  default function AddModal({visible,hideModal}) {
     }
 
     return (
-            <div className="section-modal">
-                <div className="overlay">
-                    <div className="modal-content">
+            <div className="section-modal" >
+                <div className="overlay" >
+                    <div className="modal-content animate__animated animate__fadeInDown " style={{animationDuration : '0.7s'}}>
                         <form method="post" onSubmit={hideModal}>
                             <h2>Nouveau employe</h2>
                             {/*champ nom*/}
