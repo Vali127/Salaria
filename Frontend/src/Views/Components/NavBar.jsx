@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
             <div className="container">
-                <Link className="navbar-brand d-flex align-items-center" to="/">
+                <Link className="navbar-brand d-flex align-items-center" to="/HomePage">
                     <img src={logo} alt="Logo" width="35" height="35" className="me-2" />
                     <span className="fw-bold AppTitle">Salaria</span>
                 </Link>
