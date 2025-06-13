@@ -1,5 +1,5 @@
 import React from 'react'
-import PanelImage from '/src/assets/panelImage.jpg'
+import PanelImage from '/src/assets/panelImage.png'
 const HomePanel = () => {
   return (
     <div>
