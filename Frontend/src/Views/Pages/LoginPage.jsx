@@ -29,6 +29,9 @@ const LoginPage = ({onLogin}) => {
     useEffect(() => {
         document.getElementById("hide_and_show").innerHTML = (Hidden) ? "&#xE220;" : "&#xE224;" //ça marche pas avec un textContent
     }, [Hidden])
+    useEffect(() => {
+        localStorage.removeItem('isLoggedIn')
+    })
 
     return (
         <div className={"container-fluid m-5 d-flex align-items-center justify-content-center"} >
