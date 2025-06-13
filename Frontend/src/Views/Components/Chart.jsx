@@ -13,9 +13,8 @@ export default function Chart({ total, min, max }) {
 
     return (
         <>
-            <h2 className={"title"}>Histogramme du bilan</h2>
-
-            <ResponsiveContainer width="80%" height={300}>
+            <ResponsiveContainer width="60%" height={300}>
+                <h2 className={"title"}>Histogramme du bilan</h2>
                 <BarChart
                     data={data}
                     layout="vertical" // Pour les barres horizontales
