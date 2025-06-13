@@ -11,14 +11,15 @@ function App() {
     const [ValidLogin, setValidLogin] = useState(false) //désolé pour la structure mais ça prendra un peu du temps si ' j' ai fais quelquechose de plus sécurisé
 
     useEffect(() => {
-        const savedLogin = localStorage.getItem("isLoggedIn")
+        const savedLogin = sessionStorage.getItem("isLoggedIn")
         if (savedLogin === "true")
             setValidLogin(true)
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("isLoggedIn", ValidLogin)
+        sessionStorage.setItem("isLoggedIn", ValidLogin)
     }, [ValidLogin])
+
 
   return <BrowserRouter>
       {ValidLogin && <Navbar/>}

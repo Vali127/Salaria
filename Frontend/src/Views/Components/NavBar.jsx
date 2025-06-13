@@ -9,13 +9,13 @@ export default function Navbar() {
         let navigations = document.querySelectorAll('.nav-item')
         navigations.forEach(navigation => { navigation.classList.remove('underline') })
         event.currentTarget.classList.add('underline')
-        localStorage.setItem('currentPage', document.getElementsByClassName('underline')[0].id)
+        sessionStorage.setItem('currentPage', document.getElementsByClassName('underline')[0].id)
     }
     useEffect(() => {
-        if(localStorage.getItem('currentPage')) {
+        if(sessionStorage.getItem('currentPage')) {
             let navigations = document.querySelectorAll('.nav-item')
             navigations.forEach(navigation => { navigation.classList.remove('underline') })
-            document.getElementById(localStorage.getItem('currentPage')).classList.add('underline')
+            document.getElementById(sessionStorage.getItem('currentPage')).classList.add('underline')
         }
     })
 

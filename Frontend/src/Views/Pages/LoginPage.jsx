@@ -35,7 +35,7 @@ const LoginPage = ({onLogin}) => {
         document.getElementById("hide_and_show").innerHTML = (Hidden) ? "&#xE220;" : "&#xE224;" //ça marche pas avec un textContent
     }, [Hidden])
     useEffect(() => {
-        localStorage.removeItem('isLoggedIn')
+        sessionStorage.removeItem('isLoggedIn')
     }, [])
 
     return (
