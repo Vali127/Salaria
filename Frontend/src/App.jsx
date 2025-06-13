@@ -1,17 +1,21 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React, {useState} from 'react';
 import HomePage from "./Views/Pages/HomePage.jsx";
 import EmployePage from "./Views/Pages/EmployePage.jsx";
 import StatisticsPage from "./Views/Pages/StatisticsPage.jsx";
 import Navbar from "./Views/Components/NavBar.jsx";
-import React from "react";
+import LoginPage from "./Views/Pages/LoginPage.jsx";
 
 
 function App() {
+    const [ValidLogin, setValidLogin] = useState(false) //désolé pour la structure mais ça prendra un peu du temps di ' j' ai fais quelquechose de plus sécurisé
+
   return <BrowserRouter>
-      <Navbar/>
+      { ValidLogin && <Navbar/>}
 
       <Routes>
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/" element={<LoginPage onLogin={setValidLogin} />} />
+          <Route path="/HomePage" element={<HomePage/>} />
           <Route path="/EmployeLists" element={<EmployePage/>} />
           <Route path="/Balance" element={<StatisticsPage/>} />
 
