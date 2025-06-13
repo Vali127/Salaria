@@ -2,14 +2,22 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/icon.svg' // Mets ici ton image de logo
 import '../../Styles/navbar.css'
+import {useEffect} from "react";
 export default function Navbar() {
 
     const ToggleMenuIndicator = (event) => {
         let navigations = document.querySelectorAll('.nav-item')
         navigations.forEach(navigation => { navigation.classList.remove('underline') })
-        event.currentTarget.classList.add('underline') //ca ait un ciblage des ChildNodes de l' element si tu fais 'event.target'
+        event.currentTarget.classList.add('underline')
+        localStorage.setItem('currentPage', document.getElementsByClassName('underline')[0].id)
     }
-
+    useEffect(() => {
+        if(localStorage.getItem('currentPage')) {
+            let navigations = document.querySelectorAll('.nav-item')
+            navigations.forEach(navigation => { navigation.classList.remove('underline') })
+            document.getElementById(localStorage.getItem('currentPage')).classList.add('underline')
+        }
+    })
 
     return (
         <nav className="navbar navbar-expand-lg bg-white shadow-sm fixed-top">

@@ -24,6 +24,11 @@ const LoginPage = ({onLogin}) => {
         element.style.color = ( response.access ) ? 'green' : 'red'
         setAccess(response.access)
     }
+    const ResetFields = () => {
+        setUsername('')
+        setUserPassword('')
+    }
+
     const GoToHomePage = () => onLogin(Access)
 
     useEffect(() => {
@@ -69,7 +74,7 @@ const LoginPage = ({onLogin}) => {
                             (
                                 <div className={"d-flex justify-content-center  align-items-center gap-2 w-100"} >
                                     <button className={"btn btn-primary "} type={"submit"} >Confirmer</button>
-                                    <button className={"btn btn-warning "} type={"reset"} >Quitter</button>
+                                    <button className={"btn btn-warning "} type={"button"} onClick={ResetFields} >Annuler</button>
                                 </div>
                             )
                         }
