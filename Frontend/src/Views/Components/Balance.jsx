@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Balance({data1,data2,data3}) {
     return (
-        <div className={"d-flex flex-column"}>
+        <div className={"d-flex flex-column balance"}>
             <h2 className={"title"}>Bilan des salaires</h2>
              <div className={"balance-div d-flex flex-column "}>
 

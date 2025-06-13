@@ -38,3 +38,25 @@ tbody tr:hover {
     font-weight: bold;
     font-size: 1rem;
 }
+.main_data {
+    width: 100%;
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 120px;
+    align-items: center;
+}
+.pie_responsive_container {
+    background-color: rgba(170, 170, 170, 0.25);
+    padding-top: 20px;
+    border-radius:  15px;
+}
+text {
+    font-size: 14px;
+    font-weight:  bold;
+    color: #818181;
+}
+div.balance td {
+    font-weight: bold;
+    color: #818181;
+}
