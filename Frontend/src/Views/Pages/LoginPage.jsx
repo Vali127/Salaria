@@ -31,7 +31,7 @@ const LoginPage = ({onLogin}) => {
     }, [Hidden])
     useEffect(() => {
         localStorage.removeItem('isLoggedIn')
-    })
+    }, [])
 
     return (
         <div className={"container-fluid m-5 d-flex align-items-center justify-content-center"} >
