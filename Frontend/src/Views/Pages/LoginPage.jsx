@@ -34,7 +34,9 @@ const LoginPage = ({onLogin}) => {
         <div className={"container-fluid m-5 d-flex align-items-center justify-content-center"} >
                 <div className={"login_form"} >
                     <form className={"form"} method="post" onSubmit={HandleSubmit} >
+
                         <h2>Connexion</h2>
+
                         <p className={"login_paragraph"}>
                             <label className={"login_label"} >Nom d 'utilisateur</label>
                             <input
@@ -43,6 +45,7 @@ const LoginPage = ({onLogin}) => {
                                 value={Username}
                             />
                         </p>
+
                         <p className={"login_paragraph"} >
                             <label className={"login_label"}>Mot de passe</label>
                             <span className={"input_div"} >
@@ -55,7 +58,9 @@ const LoginPage = ({onLogin}) => {
                                 <label onClick={HideAndShowPassword} className={"icon-font log_icon"} id={"hide_and_show"} ></label>
                             </span>
                         </p>
+
                         <p className={"login_paragraph"} ><label id={"login_request_response"}></label></p>
+
                         { Access ?
                             (   <Link className={"btn btn-success"} to="/HomePage" onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</Link> ) :
                             (
@@ -65,6 +70,7 @@ const LoginPage = ({onLogin}) => {
                                 </div>
                             )
                         }
+
                     </form>
                 </div>
         </div>
