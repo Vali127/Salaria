@@ -30,7 +30,7 @@ export default function StatisticsPage() {
     }, []);
 
     return (
-        <div className="my-container d-flex flex-row align-items-center px-5 ">
+        <div className="my-container d-flex flex-row align-items-center px-5">
             {data1.totalSalary && data2.minSalary && data3.maxSalary ? (
                 <div className={"main_data"}>
                     <Balance data1={data1} data2={data2} data3={data3} />

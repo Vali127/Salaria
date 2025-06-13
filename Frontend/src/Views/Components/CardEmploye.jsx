@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CardEmploye({ employe, onEditEmploye, onDeleteEmploye }) {
     return (
-        <tr>
+        <tr >
             <td className="col-1 text-danger" style={{paddingLeft : '25px'}} >{employe.numEmploye}</td>
             <td className="col-2">{employe.nomEmploye}</td>
             <td className="col-3">{employe.nbJour}</td>

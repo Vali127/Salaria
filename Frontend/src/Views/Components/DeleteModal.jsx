@@ -8,7 +8,7 @@ export default function DeleteModal({visible,onClose,employe}) {
     return (
         <div className="section-modal">
             <div className="overlay">
-                <div className="modal-content">
+                <div className="modal-content animate__animated animate__fadeInDown " style={{animationDuration : '0.7s'}}>
                     <form method="post">
                         <h2>Confirmer la suppression: {employe.numEmploye} </h2>
 

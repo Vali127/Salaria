@@ -28,7 +28,7 @@ export default function ModifyModal({ visible, onClose,employe }) {
     return (
         <div className="section-modal">
             <div className="overlay">
-                <div className="modal-content">
+                <div className="modal-content animate__animated animate__fadeInDown " style={{animationDuration : '0.7s'}} >
                     <form method="post">
                         <h2>Modifier employe : {employe.numEmploye} </h2>
                         <p><label>Nom :</label>
