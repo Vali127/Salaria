@@ -33,19 +33,21 @@ const LoginPage = ({onLogin}) => {
     return (
         <div className={"container-fluid m-5 d-flex align-items-center justify-content-center"} >
                 <div className={"login_form"} >
-                    <form method="post" onSubmit={HandleSubmit} >
+                    <form className={"form"} method="post" onSubmit={HandleSubmit} >
                         <h2>Connexion</h2>
-                        <p>
-                            <label>Nom d 'utilisateur</label>
+                        <p className={"login_paragraph"}>
+                            <label className={"login_label"} >Nom d 'utilisateur</label>
                             <input
+                                className={"login_input"}
                                 onChange={(event) => setUsername(event.target.value)}
                                 value={Username}
                             />
                         </p>
-                        <p>
-                            <label>Mot de passe</label>
+                        <p className={"login_paragraph"} >
+                            <label className={"login_label"}>Mot de passe</label>
                             <span className={"input_div"} >
                                 <input
+                                    className={"login_input"}
                                     id={"passwd"} type={ Hidden ? "password" : "text" }
                                     onChange={(event) => setUserPassword(event.target.value)}
                                     value={UserPassword}
@@ -53,7 +55,7 @@ const LoginPage = ({onLogin}) => {
                                 <label onClick={HideAndShowPassword} className={"icon-font log_icon"} id={"hide_and_show"} ></label>
                             </span>
                         </p>
-                        <p><label id={"login_request_response"}></label></p>
+                        <p className={"login_paragraph"} ><label id={"login_request_response"}></label></p>
                         { Access ?
                             (   <Link className={"btn btn-success"} to="/HomePage" onClick={GoToHomePage}  style={{width : '75%'}} >page d' acceuil</Link> ) :
                             (
