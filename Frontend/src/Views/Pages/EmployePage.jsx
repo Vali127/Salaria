@@ -47,7 +47,7 @@ export default function EmployePage() {
     }
 
     return (
-        <div className="my-container">
+        <div className="my-container animate__animated animate__fadeIn ">
             <ModifyModal  visible={modal} onClose={hideModal} employe={selectedEmploye}/>
             <DeleteModal visible={deleteModal} onClose={hideDeleteModal} employe={selectedEmploye}/>
             <h4>Listes des employes</h4>

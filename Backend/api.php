@@ -49,8 +49,12 @@ else if($method == 'POST'){
     $employeData = json_decode(file_get_contents("php://input"),true);
 
     try{
+        if( $employeData['action'] == 'login_confirmation' ){
+            $data = $vm->verifyLoginInformation( $employeData["object"]["username"], $employeData["object"]["password"] );
+            echo json_encode($data);
+        }
          //test si vide
-         if(isEmptyOrWhiteSpace($employeData['nameEmp'])||isEmptyOrWhiteSpace($employeData['nbDay'])||isEmptyOrWhiteSpace($employeData['dayRate'])){
+         else if(isEmptyOrWhiteSpace($employeData['nameEmp'])||isEmptyOrWhiteSpace($employeData['nbDay'])||isEmptyOrWhiteSpace($employeData['dayRate'])){
              echo json_encode(["message"=>"Resultat: Veuillez entrez toutes les informations"]);
              exit;
            }

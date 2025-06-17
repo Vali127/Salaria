@@ -4,3 +4,23 @@
     --orange-color:#FE712D;
     --red-color:#DC0C3A;
 }
+
+@font-face {
+    font-family: 'phosphor';
+    src: url("assets/fonts/Phosphor-Fill.ttf") format('truetype') ;
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'phosphor';
+    src: url("./assets/fonts/Phosphor.ttf") format('truetype') ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-font {
+    font-family: 'phosphor', sans-serif;
+    font-weight: normal;
+    padding-bottom: 5px;
+}

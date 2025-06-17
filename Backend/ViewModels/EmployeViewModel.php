@@ -119,5 +119,25 @@ class EmployeViewModel {
         return $stmt -> execute([$numEmp]);
     }
 
+    public function verifyLoginInformation($username, $password){
+
+                if(empty($username) || empty($password)){
+                    return [ "message"=>"Veuillez remplir tous les champs !!","access"=>false];
+                }
+
+                $sql = "SELECT * FROM USER WHERE user_name = :nom ";
+                $stmt = $this->connection->prepare($sql);
+                $stmt->execute(['nom' => $username]);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if($result) {
+                    $db_password = $result['user_password'];
+                    if( $password == $db_password ) {
+                        return  [ "message"=>"Information correct ! Bienvue sur Salaria","access"=>true] ;
+                    }
+                    return [ "message"=>"Accès réfusé ! verifier vos informations","access"=>false];
+                }
+                return [ "message"=>"Accès réfusé ! utilisateur inexistant","access"=>false];
+    }
 
 }

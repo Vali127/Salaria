@@ -2,9 +2,21 @@
 color: var(--green-color);
 }
 .underline{
-    text-decoration: underline;
-    text-decoration-color: var(--green-color);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 3px ;
-
+    border-bottom: 3px solid var(--green-color);
+}
+.nav-item {
+    height: 35px;
+    padding: 0;
+}
+.nav-link {
+    padding: 0;
+    background-color: #DC0C3A;
+}
+@keyframes menu-indicator-animation  {
+    from {
+        width: 0;
+    }
+    to {
+        width:  100%;
+    }
 }

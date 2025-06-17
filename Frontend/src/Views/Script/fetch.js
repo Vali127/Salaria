@@ -71,3 +71,23 @@ export async function deleteEmploye(numEmp){
     console.log("reponse du serveur",data.message);
 
 }
+
+export async function fetchUserLogin(object) {
+    try {
+        const res = await fetch(import.meta.env.VITE_API_URL, {
+            method : 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                action : 'login_confirmation',
+                object: object,
+            })
+        })
+        if( !res.ok )
+            throw new Error(`Erreur HTTP ${res.status}`)
+        let data = await res.json()
+        return data
+    }
+    catch (error) {
+        console.log("ERROR MESSAGE : ",error);
+    }
+}
