@@ -46,13 +46,9 @@ tbody tr:hover {
     padding: 0 120px;
     align-items: center;
 }
-.pie_responsive_container {
-    background-color: rgba(170, 170, 170, 0.25);
-    padding-top: 20px;
-    border-radius:  15px;
-}
+
 text {
-    font-size: 14px;
+    font-size: 12px;
     font-weight:  bold;
     color: #818181;
 }
